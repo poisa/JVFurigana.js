@@ -47,7 +47,7 @@ $(document).ready(function(){
     $(".yourSelectorHere").JVFurigana();
 });
 ```
-## It doesn't work.
+## I can't make it work
 Make sure you are using a supported browser. At the time of this writing, Firefox and Opera won't render the ruby tags. Also, the plugin is set to ignore rendering in these two browsers unless you pass `forceRender: true` as a parameter. Note that even is you pass `forceRender: true` on Firefox you will **not** see any changes even though the HTML DOES get modified.
 
 ```javascript
@@ -58,6 +58,23 @@ $(document).ready(function(){
     $(".yourSelectorHere").JVFurigana(options);
 });
 ```
+
+## I still can't make it work
+Make sure you are using japanes style parenthesis when writing your japanese text. These are different from western style parentheses. 
+
+Western style parentheses: `(` and `)`.
+Japanese style parentheses: `（` and `）`.
+Notice the difference?
+
+If you are on a Mac using OSX you can set up your keyboard for japanese text following these steps:
+
+1. Open the System Preferences
+2. Select *Language & Text*
+3. Choose the *Input Sources* tab
+4. Scroll down to where it says *Kotoeri* and make sure **Hiragana** is checked.
+5. On the bottom of that same window, make sure **Show Input menu in menu bar** is also checked.
+
+This will show a menu on your menu bar that will allow you to switch between input languages. Always use **Hiragana** when typing text that you want to convert with this plugin.
 
 ## Using other HTML styling breaks the plugin.
 Maybe. It all depends on *how* you style your HTML. The plugin uses regular expressions to parse the text and is expecting the following formula:
