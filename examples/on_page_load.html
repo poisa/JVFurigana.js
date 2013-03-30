@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JVFurigana.js</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            .warning {
+                display: none;
+                background-color: yellow;
+                color: red;
+            }
+            strong {
+                color: red;
+            }
+            em {
+                color: blue;
+            }
+            p {
+                font-size: 2em;
+            }
+
+            ruby {
+                ruby-align: center;
+            }
+            rt {
+                font-size: 70%;
+                color: #cc0000;
+            }
+            rp {
+                font-size: 70%;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="warning">Hey there, you are using an unsupported browser so you won't be seeing the expected results. This notice only appears in this example file, it is not part of the library.</p>
+        <p class="furigana"><em>林（はやし）さんは</em><strong>英語（えいご）</strong>が話（はな）せます</p>
+        <p>In this example, you can see how some HTML formatting is allowed inside the original text.</p>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+        <script src="../lib/xregexp-all-min.js"></script>
+        <script src="../src/jvfurigana.plugin.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                if ($.browser.mozilla || $.browser.opera) {
+                    $(".warning").show();
+                }
+                $(".furigana").JVFurigana();
+            });
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JVFurigana.js</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            .warning {
+                display: none;
+                background-color: yellow;
+                color: red;
+            }
+            p {
+                font-size: 2em;
+            }
+
+            ruby {
+                ruby-align: center;
+            }
+            rt {
+                font-size: 70%;
+                color: #cc0000;
+            }
+            rp {
+                font-size: 70%;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="warning">Hey there, you are using an unsupported browser so you won't be seeing the expected results. This notice only appears in this example file, it is not part of the library.</p>
+        <p class="furigana">林（はやし）さんは英語（えいご）が話（はな）せます</p>
+        <button id="convert">Convert</button>
+
+        <p>Conversion happens after you hit the button. Hitting it more than once will not break the results since the regular expression used to do the conversion will not match anything.</p>
+
+        <script src="../lib/jquery-1.9.1.min.js"></script>
+        <script src="../lib/jquery-migrate-1.1.1.min.js"></script>
+        <script src="../lib/xregexp-all-min.js"></script>
+        <script src="../src/jvfurigana.plugin.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                if ($.browser.mozilla || $.browser.opera) {
+                    $(".warning").show();
+                }
+                $("#convert").click(function(){
+                    $(".furigana").JVFurigana();
+                });
+            });
+        </script>
+    </body>
+</html>
+
