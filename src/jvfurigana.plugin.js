@@ -23,21 +23,25 @@
 
                 forceRender: false         // Will force rendering in non supported browsers. This usually results in no visible
                                            // change in the output though results may vary depending on the browser.
+                beginDelimiter: '（',
+                endDelimiter: '）'
             };
 
             var settings = $.extend({}, this.defaultOptions, options),
 
                 patt = XRegExp('([\\p{Han}]+)' +
-                               '（([\\p{Hiragana}]*)）',
+                               '\\' + settings.beginDelimiter + '([\\p{Hiragana}]*)' + '\\' +settings.endDelimiter,
                                'gim');
             
             return this.each(function() {
 
-                if ($.browser.mozilla || $.browser.opera) {
+                if ($.browser) {
+                  if ($.browser.mozilla || $.browser.opera) {
                     // Incompatible browser detected
                     if (!settings.forceRender) {
                         return;
                     }
+                  }
                 }
 
                 var $this = $(this),
